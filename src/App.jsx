@@ -9,19 +9,12 @@ import Experience from "./components/Portfolio.jsx";
 function App() {
     return (
         <main className='bg-slate-300/20'>
-            <Router>
+            <Router basename="/Portfolio">
                 <Routes>
-                    <Route path='/Portfolio' element={<Home />} />
-                    <Route
-                        path='/Portfolio/*'
-                        element={
-                                <Routes>
-                                    <Route path='/about' element={<About />} />
-                                    <Route path='/projects' element={<Experience/>} />
-                                    <Route path='/contact' element={<Contact/>} />
-                                </Routes>
-                        }
-                    />
+                    <Route path='/' element={<Home />} />
+                    <Route path='/about' element={<About />} />
+                    <Route path='/projects' element={<Experience/>} />
+                    <Route path='/contact' element={<Contact/>} />
                 </Routes>
             </Router>
         </main>
