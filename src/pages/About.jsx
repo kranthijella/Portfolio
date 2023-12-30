@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-
 import { styles } from "../style";
 import ComputersCanvas from "./Computer.jsx";
 import Overview from "./Overview.jsx";
@@ -10,7 +9,7 @@ import NavBar from "../components/NavBar.jsx";
 
 const Hero = () => {
     return (
-        <>
+        <div>
             <NavBar color={'white'}/>
         <section className={`relative bg-hero-pattern bg-cover bg-no-repeat bg-center w-full h-screen mx-auto`}>
             <div
@@ -57,7 +56,7 @@ const Hero = () => {
             <CTA/>
             <Footer />
         </section>
-            </>
+            </div>
     );
 };
 

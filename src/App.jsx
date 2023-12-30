@@ -12,14 +12,12 @@ function App() {
     return (
         <main className='bg-slate-300/20'>
             <Router>
-                <Suspense fallback={<Loader/>}>
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='/about' element={<About />} />
                         <Route path='/projects' element={<Experience/>} />
                         <Route path='/contact' element={<Contact/>} />
                     </Routes>
-                </Suspense>
             </Router>
         </main>
   )
