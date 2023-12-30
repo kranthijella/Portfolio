@@ -9,7 +9,7 @@ import Experience from "./components/Portfolio.jsx";
 function App() {
     return (
         <main className='bg-slate-300/20'>
-            <Router basename="/Portfolio">
+            <Router>
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/about' element={<About />} />
