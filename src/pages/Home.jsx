@@ -8,6 +8,7 @@ import Bird from "../models/Bird.jsx";
 import Plane from "../models/plane.jsx";
 import HomeInfo from "../components/HomeInfo.jsx";
 import NavBar from "../components/NavBar.jsx";
+import Bee from "./Bee.jsx";
 /*
 
 

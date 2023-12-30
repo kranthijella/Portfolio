@@ -15,6 +15,9 @@ import CTA from "./CTA.jsx";
 import Projects from "./Projects.jsx";
 import Footer from "./Footer.jsx";
 import NavBar from "./NavBar.jsx";
+import Bird from "../pages/Bee.jsx";
+import Bee from "../pages/Bee.jsx";
+import {Canvas} from "@react-three/fiber";
 
 const ExperienceCard = ({ experience,background }) => {
     return (
@@ -74,7 +77,7 @@ const Experience = () => {
                  Work Experience.
                </h2>
             </div>
-            <div className='mt-20 flex flex-col'>
+            <div className='mt-20 flex flex-col z-[-20]'>
                 <VerticalTimeline>
                     {experiences.map((experience, index) => (
                         <ExperienceCard

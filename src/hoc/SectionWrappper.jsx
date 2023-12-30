@@ -2,10 +2,14 @@ import { motion } from "framer-motion";
 
 import { styles } from "../style";
 import { staggerContainer } from "../utils/motion";
+import Bee from "../pages/Bee.jsx";
+import {Canvas} from "@react-three/fiber";
+import React from "react";
 
 const StarWrapper = (Component, idName) =>
     function HOC() {
         return (
+            <div>
             <motion.section
                 variants={staggerContainer()}
                 initial='hidden'
@@ -19,6 +23,7 @@ const StarWrapper = (Component, idName) =>
 
                 <Component />
             </motion.section>
+            </div>
         );
     };
 
