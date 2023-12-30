@@ -64,7 +64,7 @@ const ExperienceCard = ({ experience,background }) => {
 
 const Experience = () => {
     return (
-        <>
+        <div>
             <NavBar color={'black'}/>
             <div variants={textVariant()}>
                <p className={`${styles.sectionSubText} text-center`}>
@@ -89,7 +89,7 @@ const Experience = () => {
             <hr className='border-slate-200' />
             <CTA/>
             <Footer/>
-        </>
+        </div>
     );
 };
 

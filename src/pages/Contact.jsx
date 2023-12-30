@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useRef, useState } from "react";
+import {startTransition, Suspense, useRef, useState} from "react";
 import {OrbitControls, Preload } from "@react-three/drei";
 import useAlert from "../hooks/useAlert";
 import Loader from "../components/Loader.jsx"
@@ -27,7 +27,67 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true);
+
+        startTransition(() => {
+            setLoading(true);
+        });
+
+        setCurrentAnimation("hit");
+
+        try {
+            // Perform the form submission using emailjs
+            await emailjs.send(
+                import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+                {
+                    from_name: form.name,
+                    to_name: "JavaScript Mastery",
+                    from_email: form.email,
+                    to_email: "sujata@jsmastery.pro",
+                    message: form.message,
+                },
+                import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+            );
+
+            // Upon successful submission
+            setLoading(false);
+            showAlert({
+                show: true,
+                text: "Thank you for your message 😃",
+                type: "success",
+            });
+
+            setTimeout(() => {
+                hideAlert(false);
+                setCurrentAnimation("idle");
+                setForm({
+                    name: "",
+                    email: "",
+                    message: "",
+                });
+            }, 3000);
+        } catch (error) {
+            // Handle submission error
+            setLoading(false);
+            console.error(error);
+            setCurrentAnimation("idle");
+
+            showAlert({
+                show: true,
+                text: "I didn't receive your message 😢",
+                type: "danger",
+            });
+        }
+    };
+
+
+    /*const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        startTransition(() => {
+            setLoading(true);
+        });
+
         setCurrentAnimation("hit");
         // await emailjs
         //     .send(
@@ -74,7 +134,7 @@ const Contact = () => {
         //             });
         //         }
         //     );
-    }
+    }*/
 
         return (
             <div id='kittu' className='m-0'>

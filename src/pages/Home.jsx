@@ -7,6 +7,7 @@ import Sky from "../models/sky.jsx";
 import Bird from "../models/Bird.jsx";
 import Plane from "../models/plane.jsx";
 import HomeInfo from "../components/HomeInfo.jsx";
+import NavBar from "../components/NavBar.jsx";
 /*
 
 
@@ -44,6 +45,7 @@ function Home(){
         const [islandPosition,islandScale ,rotation] = adjustIsland()
     return(
         <section className="w-full h-screen relative ">
+            <NavBar color={'black'} component = {'island'}/>
             <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
                 {currentStage && <HomeInfo currentStage={currentStage} />}
             </div>
