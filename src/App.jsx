@@ -11,14 +11,14 @@ function App() {
         <main className='bg-slate-300/20'>
             <Router>
                 <Routes>
-                    <Route path='/' element={<Home />} />
+                    <Route path='/Portfolio' element={<Home />} />
                     <Route
                         path='/*'
                         element={
                                 <Routes>
-                                    <Route path='/about' element={<About />} />
-                                    <Route path='/projects' element={<Experience/>} />
-                                    <Route path='/contact' element={<Contact/>} />
+                                    <Route path='/Portfolio/about' element={<About />} />
+                                    <Route path='/Portfolio/projects' element={<Experience/>} />
+                                    <Route path='/Portfolio/contact' element={<Contact/>} />
                                 </Routes>
                         }
                     />
